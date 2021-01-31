@@ -29,7 +29,7 @@ configure_file(TutorialConfig.h.in TutorialConfig.h)
 https://theolizer.com/cpp-school3/cpp-school3-11/  
 >configure_fileはバイナリのファイル名やバージョン名など複数のソースへ反映したい様々な設定を１箇所にまとめたい時などによく使う
 
-#### バイナリツリーをインクルードに含める
+### バイナリツリーをインクルードに含める
 以下をCMakeLists.txtの最後に追加する
 ```
 # configure fileはバイナリツリーに書き込まれるため、
@@ -38,7 +38,7 @@ target_include_directories(Tutorial PUBLIC
                            "${PROJECT_BINARY_DIR}"
                            )
 ```
-#### コンフィグオプションと設定
+### コンフィグオプションと設定
 TutorialConfig.h.in
 ```
 # コンフィグオプションと設定
@@ -65,7 +65,7 @@ int main(int argc, char const *argv[])
 ```
 TutorialConfig.hはconfigure_file(TutorialConfig.h.in TutorialConfig.h)で出力される
 
-##  ビルド
+###  ビルド
 ```
 // ビルドディレクトリを作成
 $ mkdir build
