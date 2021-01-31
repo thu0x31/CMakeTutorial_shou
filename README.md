@@ -1,5 +1,6 @@
 # CMake tutorial (小)
-
+https://cmake.org/cmake/help/latest/guide/tutorial/index.html
+---
 ## はじまりはじまり
 ```
 # このバージョン以上のCMakeを必要とする
@@ -12,7 +13,7 @@ project(Tutorial VERSION 1.0)
 add_executable(Tutorial main.cpp)
 ```
 
-## C++のバージョンを指定する
+### C++のバージョンを指定する
 project()の下に以下を追加
 ```
 # C++ standardの指定
@@ -20,7 +21,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 ```
 
-## header fileを設定する
+### header fileを設定する
 ```
 # configure_file 入力 出力
 configure_file(TutorialConfig.h.in TutorialConfig.h)
@@ -81,3 +82,5 @@ $ cmake -G "Visual Studio 15 2015 Win64" ..
 - ジェネレーターはコマンドオプション以外に、CMakeLists.txtでも指定できる
 	- https://stackoverflow.com/questions/11269833/cmake-selecting-a-generator-within-cmakelists-txt
     	- PreLoad.cmakeを作成し、CMAKE_GENERATOR環境変数にジェネレーター名をセットする
+
+## 
