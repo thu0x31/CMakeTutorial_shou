@@ -28,10 +28,10 @@ configure_file(TutorialConfig.h.in TutorialConfig.h)
 https://theolizer.com/cpp-school3/cpp-school3-11/  
 >configure_fileはバイナリのファイル名やバージョン名など複数のソースへ反映したい様々な設定を１箇所にまとめたい時などによく使う
 
-#### バイナリをインクルードに含める
+#### バイナリツリーをインクルードに含める
 以下をCMakeLists.txtの最後に追加する
 ```
-# configure fileはBinaryツリーに書き込まれるため、
+# configure fileはバイナリツリーに書き込まれるため、
 # includeファイルを検索するパスのリストにそのディレクトリを追加する必要がある
 target_include_directories(Tutorial PUBLIC
                            "${PROJECT_BINARY_DIR}"
