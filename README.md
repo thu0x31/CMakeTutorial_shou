@@ -73,8 +73,8 @@ $ mkdir build
 $ cd build
 // cmake CMakeLists.txtのパス
 $ cmake ..
-// cmake -G ジェネレータ(Makefileやninjaなど) CMakeLists.txtのパス
-$ cmake -G "Visual Studio 15 2015 Win64" ..
+// cmake -G ジェネレータ(Makefileやninja,VisualStudioなど) CMakeLists.txtのパス
+$ cmake -G "Ninja" ..
 ```
 - ` cmake -G ` でジェネレータのリストが確認できる
 - ビルドディレクトリは移動しなくてもCMakeLists.txtでも指定できる
@@ -83,4 +83,25 @@ $ cmake -G "Visual Studio 15 2015 Win64" ..
 	- https://stackoverflow.com/questions/11269833/cmake-selecting-a-generator-within-cmakelists-txt
     	- PreLoad.cmakeを作成し、CMAKE_GENERATOR環境変数にジェネレーター名をセットする
 
-## 
+## ライブラリの追加
+平方根を扱うライブラリ作成のために,add_libraryでMathFunctionsを指定する
+```
+# add_library(ライブラリ名 ソース)
+add_library(MathFunctions mysqrt.cxx)
+```
+MathFunctionsをインクルードディレクトリとして追加し、mqsqrt.hを見つけられるようにする
+```
+add_subdirectory(MathFunctions)
+```
+実行可能ファイルにMathFunctionsをリンクする
+```
+target_link_libraries(Tutorial PUBLIC MathFunctions)
+```
+検索パスにバイナリツリーを追加する
+```
+target_include_directories(Tutorial PUBLIC
+                          "${PROJECT_BINARY_DIR}"
+                          "${PROJECT_SOURCE_DIR}/MathFunctions"
+                          )
+```
+### MathFunctionsをオプションにしてみる

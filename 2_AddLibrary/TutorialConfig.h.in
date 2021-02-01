@@ -1,0 +1,5 @@
+// コンフィグオプションと設定
+// CMakeがこのヘッダファイルを設定すると、
+// Tutorial_VERSION_MAJORとTutorial_VERSION_MINORの値が置き換えられる
+#define Tutorial_VERSION_MAJOR @Tutorial_VERSION_MAJOR@
+#define Tutorial_VERSION_MINOR @Tutorial_VERSION_MINOR@
